@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>V-NET 10 | Period Template</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a class="logo" href="index.html">V-NET 10</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="unit4.html">Unit 2</a>
+      <a href="unit3.html">Unit 3</a>
+      <a href="unit4.html">Unit 4</a>
+      <a href="unit5.html">Unit 5</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <span class="badge">UNIT 4 · PERIOD 5</span>
+  <h1>Listening</h1>
+  <p class="subtitle">V-NET mission: build, retrieve, reconstruct and transfer vocabulary knowledge.</p>
+
+  <div class="steps">
+    <div class="step"><span>01 · CONNECT</span><b>Explore the network</b><p class="small">See the core words, word families, collocations and related words.</p></div>
+    <div class="step"><span>02 · RETRIEVE</span><b>Recall</b><p class="small">Retrieve vocabulary without looking at the complete network.</p></div>
+    <div class="step"><span>03 · RECONSTRUCT</span><b>Rebuild connections</b><p class="small">Restore missing word-family and collocation links.</p></div>
+    <div class="step"><span>04 · TRANSFER</span><b>Use in context</b><p class="small">Apply vocabulary to a new situation or short text.</p></div>
+    <div class="step"><span>05 · CHECKPOINT</span><b>Check your progress</b><p class="small">Get immediate feedback and a score.</p></div>
+  </div>
+
+  <section class="card" style="margin-top:24px">
+    <h2>CONNECT · Core Vocabulary</h2>
+    <div class="grid">
+      <div class="card"><h3>adopt</h3><p><b>Collocations:</b> adopt a policy, solution, lifestyle</p><p class="small">Synonym: take up · Word family: adoption</p></div>
+      <div class="card"><h3>reduce</h3><p><b>Collocations:</b> reduce waste, pollution, emissions</p><p class="small">Synonym: decrease · Opposite: increase · Family: reduction</p></div>
+      <div class="card"><h3>protect</h3><p><b>Collocations:</b> protect the environment, wildlife, resources</p><p class="small">Synonym: safeguard · Opposite: damage · Family: protection</p></div>
+      <div class="card"><h3>awareness</h3><p><b>Collocations:</b> raise awareness, environmental awareness</p><p class="small">Family: aware, unaware</p></div>
+    </div>
+  </section>
+
+  <section class="card" style="margin-top:24px">
+    <h2>RETRIEVE · Quick Check</h2>
+    <div class="question">
+      <p><b>1. Which verb means “make something smaller in amount or size”?</b></p>
+      <label><input type="radio" name="q1" value="1"> reduce</label>
+      <label><input type="radio" name="q1" value="0"> protect</label>
+      <label><input type="radio" name="q1" value="0"> adopt</label>
+    </div>
+    <div class="question">
+      <p><b>2. Complete the collocation: raise ________</b></p>
+      <label><input type="radio" name="q2" value="1"> awareness</label>
+      <label><input type="radio" name="q2" value="0"> environment</label>
+      <label><input type="radio" name="q2" value="0"> human</label>
+    </div>
+    <button onclick="checkAnswers()">CHECK ANSWERS</button>
+    <div id="feedback" class="feedback"></div>
+  </section>
+
+  <section class="card" style="margin-top:24px">
+    <h2>TRANSFER · New Context</h2>
+    <p>Our school wants to become greener. Students should ________ waste and ________ the school environment.</p>
+    <p class="small">This section will be expanded with new-context tasks for the final V-NET version.</p>
+  </section>
+</main>
+
+<footer>V-NET 10 · Vocabulary Network for Grade 10</footer>
+<script>
+function checkAnswers(){
+  let score=0;
+  document.querySelectorAll('input[type=radio]:checked').forEach(x=>score+=Number(x.value));
+  const f=document.getElementById('feedback');
+  f.style.display='block';
+  f.innerHTML='<b>Your score: '+score+'/2</b><br>'+ (score===2 ? 'Excellent! You reconstructed the key connections.' : 'Review the network and try again.');
+}
+</script>
+</body>
+</html>
